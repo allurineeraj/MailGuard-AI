@@ -50,3 +50,5 @@ ml/checkpoints/*.pt
 # OS files
 .DS_Store
 Thumbs.db
+
+.vercel
