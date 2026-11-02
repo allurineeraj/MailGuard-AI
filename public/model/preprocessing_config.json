@@ -1,0 +1,35 @@
+{
+  "model_version": "mailguard-bilstm-v1.0.0",
+  "model_format": "onnx",
+  "opset_version": 14,
+  "max_sequence_length": 128,
+  "input_tensor_name": "input_ids",
+  "output_tensor_name": "output",
+  "pad_token": "<PAD>",
+  "unk_token": "<UNK>",
+  "pad_id": 0,
+  "unk_id": 1,
+  "special_tokens": {
+    "<PAD>": 0,
+    "<UNK>": 1,
+    "<url>": 2,
+    "<email>": 3,
+    "<money>": 4,
+    "<num>": 5
+  },
+  "tokenization_rules": {
+    "lowercase": true,
+    "url_pattern": "https?://[^\\s]+|www\\.[^\\s]+",
+    "email_pattern": "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}",
+    "money_pattern": "\\$\\d+(?:,\\d+)*(?:\\.\\d+)?|\\b\\d+(?:,\\d+)*(?:\\.\\d+)?\\s*(?:dollars?|usd)\\b",
+    "num_pattern": "\\b\\d+\\b",
+    "token_extract_pattern": "<[a-z]+>|[a-z0-9]{2,}"
+  },
+  "classification": {
+    "spam_threshold": 0.48,
+    "labels": {
+      "0": "safe",
+      "1": "spam"
+    }
+  }
+}

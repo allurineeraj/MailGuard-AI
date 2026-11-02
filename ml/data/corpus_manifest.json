@@ -1,0 +1,22 @@
+{
+  "corpus_name": "Apache SpamAssassin Public Mail Corpus",
+  "source_base_url": "https://spamassassin.apache.org/old/publiccorpus/",
+  "archives": [
+    {
+      "archive": "20030228_easy_ham.tar.bz2",
+      "label": 0,
+      "label_name": "safe_ham",
+      "extracted_count": 2500,
+      "local_path": "C:\\Users\\24016\\OneDrive\\Desktop\\spam email classifier\\ml\\data\\raw\\20030228_easy_ham.tar.bz2"
+    },
+    {
+      "archive": "20030228_spam.tar.bz2",
+      "label": 1,
+      "label_name": "spam",
+      "extracted_count": 500,
+      "local_path": "C:\\Users\\24016\\OneDrive\\Desktop\\spam email classifier\\ml\\data\\raw\\20030228_spam.tar.bz2"
+    }
+  ],
+  "total_extracted_emails": 3000,
+  "license": "Apache License 2.0 / Public Domain for Anti-Spam Research"
+}

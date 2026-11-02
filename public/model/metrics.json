@@ -1,0 +1,465 @@
+{
+  "dataset_info": {
+    "name": "Apache SpamAssassin Public Email Corpus",
+    "source_url": "https://spamassassin.apache.org/old/publiccorpus/",
+    "license": "Apache License 2.0 / Anti-Spam Research Public Domain",
+    "limitations": [
+      "Historical email distribution from 2002-2006; modern targeted spear-phishing differs.",
+      "English language primary composition.",
+      "Subject to early 2000s commercial spam characteristics (e.g., mortgage refinance, generic pharma)."
+    ],
+    "split_counts": {
+      "train": 2068,
+      "val": 443,
+      "test": 444,
+      "total": 2955,
+      "raw_total": 3000,
+      "duplicates_removed": 45
+    },
+    "vocab_size": 4000,
+    "max_sequence_length": 128,
+    "evaluated_at": "2026-11-02T15:30:21.193049Z"
+  },
+  "models": {
+    "bilstm": {
+      "name": "BiLSTM Neural Classifier",
+      "architecture": "Embedding(32) -> BiLSTM(hidden=32, bidirectional=True) -> GlobalMaxPool -> Dense(16) -> Sigmoid",
+      "decision_threshold": 0.48,
+      "accuracy": 0.9865,
+      "precision": 0.9583,
+      "recall": 0.9583,
+      "f1": 0.9583,
+      "false_positive_rate": 0.0081,
+      "confusion_matrix": {
+        "tn": 369,
+        "fp": 3,
+        "fn": 3,
+        "tp": 69
+      },
+      "test_samples": 444
+    },
+    "baseline_logistic_regression": {
+      "name": "TF-IDF + Logistic Regression Baseline",
+      "architecture": "TfidfVectorizer(max_features=4000, ngrams=1-2) -> LogisticRegression(C=1.0)",
+      "decision_threshold": 0.2,
+      "accuracy": 0.982,
+      "precision": 0.9444,
+      "recall": 0.9444,
+      "f1": 0.9444,
+      "false_positive_rate": 0.0108,
+      "confusion_matrix": {
+        "tn": 368,
+        "fp": 4,
+        "fn": 4,
+        "tp": 68
+      },
+      "test_samples": 444
+    }
+  },
+  "learned_signals": {
+    "top_spam_indicators": [
+      {
+        "token": "font",
+        "weight": 3.2106
+      },
+      {
+        "token": "br",
+        "weight": 2.509
+      },
+      {
+        "token": "td",
+        "weight": 2.188
+      },
+      {
+        "token": "free",
+        "weight": 2.1627
+      },
+      {
+        "token": "money",
+        "weight": 1.9548
+      },
+      {
+        "token": "remove",
+        "weight": 1.7332
+      },
+      {
+        "token": "000",
+        "weight": 1.5236
+      },
+      {
+        "token": "email",
+        "weight": 1.423
+      },
+      {
+        "token": "href",
+        "weight": 1.3858
+      },
+      {
+        "token": "href http",
+        "weight": 1.3318
+      },
+      {
+        "token": "br br",
+        "weight": 1.3143
+      },
+      {
+        "token": "tr",
+        "weight": 1.2651
+      },
+      {
+        "token": "visit",
+        "weight": 1.2244
+      },
+      {
+        "token": "width",
+        "weight": 1.2232
+      },
+      {
+        "token": "account",
+        "weight": 1.2074
+      },
+      {
+        "token": "rates",
+        "weight": 1.2025
+      },
+      {
+        "token": "receive",
+        "weight": 1.1954
+      },
+      {
+        "token": "domain",
+        "weight": 1.169
+      },
+      {
+        "token": "contact",
+        "weight": 1.129
+      },
+      {
+        "token": "membership",
+        "weight": 1.1197
+      },
+      {
+        "token": "social",
+        "weight": 1.0954
+      },
+      {
+        "token": "company",
+        "weight": 1.0856
+      },
+      {
+        "token": "investment",
+        "weight": 1.0803
+      },
+      {
+        "token": "information",
+        "weight": 1.0669
+      },
+      {
+        "token": "address",
+        "weight": 1.051
+      },
+      {
+        "token": "offer",
+        "weight": 1.0365
+      },
+      {
+        "token": "transaction",
+        "weight": 1.0245
+      },
+      {
+        "token": "color",
+        "weight": 1.0236
+      },
+      {
+        "token": "poker",
+        "weight": 1.0228
+      },
+      {
+        "token": "click",
+        "weight": 1.0193
+      },
+      {
+        "token": "reply",
+        "weight": 1.013
+      },
+      {
+        "token": "align",
+        "weight": 1.0115
+      },
+      {
+        "token": "guaranteed",
+        "weight": 1.0048
+      },
+      {
+        "token": "access",
+        "weight": 0.9873
+      },
+      {
+        "token": "link",
+        "weight": 0.9655
+      },
+      {
+        "token": "body",
+        "weight": 0.9471
+      },
+      {
+        "token": "size",
+        "weight": 0.9377
+      },
+      {
+        "token": "business",
+        "weight": 0.9356
+      },
+      {
+        "token": "click http",
+        "weight": 0.9333
+      },
+      {
+        "token": "adclick",
+        "weight": 0.9272
+      },
+      {
+        "token": "tobacco",
+        "weight": 0.9271
+      },
+      {
+        "token": "home",
+        "weight": 0.9125
+      },
+      {
+        "token": "opportunity",
+        "weight": 0.91
+      },
+      {
+        "token": "removal",
+        "weight": 0.9074
+      },
+      {
+        "token": "marketing",
+        "weight": 0.8996
+      },
+      {
+        "token": "low",
+        "weight": 0.885
+      },
+      {
+        "token": "www adclick",
+        "weight": 0.8844
+      },
+      {
+        "token": "ws cfm",
+        "weight": 0.8844
+      },
+      {
+        "token": "adclick ws",
+        "weight": 0.8844
+      },
+      {
+        "token": "price",
+        "weight": 0.8681
+      },
+      {
+        "token": "dear",
+        "weight": 0.8652
+      },
+      {
+        "token": "future",
+        "weight": 0.8634
+      },
+      {
+        "token": "height",
+        "weight": 0.8632
+      },
+      {
+        "token": "da",
+        "weight": 0.8617
+      },
+      {
+        "token": "income",
+        "weight": 0.8568
+      },
+      {
+        "token": "face",
+        "weight": 0.8512
+      },
+      {
+        "token": "fund",
+        "weight": 0.8364
+      },
+      {
+        "token": "src http",
+        "weight": 0.8249
+      },
+      {
+        "token": "center",
+        "weight": 0.8116
+      },
+      {
+        "token": "95",
+        "weight": 0.8068
+      }
+    ],
+    "top_ham_indicators": [
+      {
+        "token": "2002",
+        "weight": -1.7261
+      },
+      {
+        "token": "date",
+        "weight": -1.4853
+      },
+      {
+        "token": "url http",
+        "weight": -1.4535
+      },
+      {
+        "token": "url",
+        "weight": -1.4355
+      },
+      {
+        "token": "wrote",
+        "weight": -1.3949
+      },
+      {
+        "token": "spamassassin",
+        "weight": -1.2141
+      },
+      {
+        "token": "rpm",
+        "weight": -1.2009
+      },
+      {
+        "token": "spam",
+        "weight": -1.0722
+      },
+      {
+        "token": "www newsisfree",
+        "weight": -1.0108
+      },
+      {
+        "token": "newsisfree com",
+        "weight": -1.0108
+      },
+      {
+        "token": "newsisfree",
+        "weight": -1.0108
+      },
+      {
+        "token": "fork",
+        "weight": -0.9753
+      },
+      {
+        "token": "use",
+        "weight": -0.9669
+      },
+      {
+        "token": "09",
+        "weight": -0.9625
+      },
+      {
+        "token": "said",
+        "weight": -0.9562
+      },
+      {
+        "token": "razor",
+        "weight": -0.9517
+      },
+      {
+        "token": "date supplied",
+        "weight": -0.9361
+      },
+      {
+        "token": "supplied",
+        "weight": -0.9323
+      },
+      {
+        "token": "yahoo",
+        "weight": -0.8941
+      },
+      {
+        "token": "think",
+        "weight": -0.8881
+      },
+      {
+        "token": "01",
+        "weight": -0.8718
+      },
+      {
+        "token": "exmh",
+        "weight": -0.8695
+      },
+      {
+        "token": "date 2002",
+        "weight": -0.849
+      },
+      {
+        "token": "rpm list",
+        "weight": -0.8374
+      },
+      {
+        "token": "2002 10",
+        "weight": -0.7931
+      },
+      {
+        "token": "2002 09",
+        "weight": -0.7929
+      },
+      {
+        "token": "file",
+        "weight": -0.7754
+      },
+      {
+        "token": "like",
+        "weight": -0.7594
+      },
+      {
+        "token": "sep",
+        "weight": -0.7228
+      },
+      {
+        "token": "freshrpms",
+        "weight": -0.7082
+      },
+      {
+        "token": "perl",
+        "weight": -0.6925
+      },
+      {
+        "token": "spambayes",
+        "weight": -0.679
+      },
+      {
+        "token": "freshrpms net",
+        "weight": -0.6735
+      },
+      {
+        "token": "spamassassin talk",
+        "weight": -0.6689
+      },
+      {
+        "token": "01 00",
+        "weight": -0.6553
+      },
+      {
+        "token": "say",
+        "weight": -0.6517
+      },
+      {
+        "token": "ve",
+        "weight": -0.6478
+      },
+      {
+        "token": "really",
+        "weight": -0.6408
+      },
+      {
+        "token": "users",
+        "weight": -0.6403
+      },
+      {
+        "token": "server",
+        "weight": -0.6198
+      }
+    ]
+  }
+}
