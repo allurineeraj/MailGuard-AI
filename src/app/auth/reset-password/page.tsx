@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ShieldCheck, Mail, Lock, ArrowRight, AlertTriangle, CheckCircle2 } from "lucide-react";
-import { createClient } from "../../../lib/supabase/client";
+import { createClient } from "@/lib/supabase/client";
 
 export default function ResetPasswordPage() {
   const [email, setEmail] = useState("");

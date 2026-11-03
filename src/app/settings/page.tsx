@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { AppShell } from "../../components/layout/AppShell";
+import { AppShell } from "@/components/layout/AppShell";
 import {
   Settings as SettingsIcon,
   User as UserIcon,
@@ -14,7 +14,7 @@ import {
   Save,
   Key,
 } from "lucide-react";
-import { createClient } from "../../lib/supabase/client";
+import { createClient } from "@/lib/supabase/client";
 import type { User } from "@supabase/supabase-js";
 import Link from "next/link";
 

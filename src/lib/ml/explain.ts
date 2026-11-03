@@ -1,4 +1,4 @@
-import { ExplanationSignal } from "../types";
+import { ExplanationSignal } from "@/lib/types";
 import { cleanAndTokenize } from "./tokenizer";
 
 /**

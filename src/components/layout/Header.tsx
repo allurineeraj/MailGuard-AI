@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { Menu, Cpu, CheckCircle2, AlertTriangle, ShieldAlert } from "lucide-react";
 import Link from "next/link";
-import { checkArtifactsStatus, type ArtifactStatus } from "../../lib/ml/onnx-session";
+import { checkArtifactsStatus, type ArtifactStatus } from "@/lib/ml/onnx-session";
 
 interface HeaderProps {
   onOpenMobileMenu: () => void;

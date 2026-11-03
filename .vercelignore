@@ -1,3 +1,0 @@
-# Exclude Python training and Supabase CLI from Vercel deployment payload
-ml/
-supabase/
