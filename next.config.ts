@@ -1,8 +1,14 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   webpack: (config, { isServer }) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "@": path.resolve(process.cwd(), "src"),
+    };
+
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,

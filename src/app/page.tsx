@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { AppShell } from "@/components/layout/AppShell";
+import { AppShell } from "../components/layout/AppShell";
 import {
   Mail,
   ShieldAlert,
@@ -18,8 +18,8 @@ import {
   Sparkles,
   Info,
 } from "lucide-react";
-import { createClient } from "@/lib/supabase/client";
-import type { PredictionRecord, ModelMetricsData } from "@/lib/types";
+import { createClient } from "../lib/supabase/client";
+import type { PredictionRecord, ModelMetricsData } from "../lib/types";
 
 export default function OverviewPage() {
   const [userPredictions, setUserPredictions] = useState<PredictionRecord[]>([]);

@@ -4,7 +4,7 @@ import { Suspense, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ShieldCheck, Lock, Mail, ArrowRight, AlertTriangle } from "lucide-react";
-import { createClient } from "@/lib/supabase/client";
+import { createClient } from "../../../lib/supabase/client";
 
 function LoginForm() {
   const router = useRouter();

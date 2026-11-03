@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { AppShell } from "@/components/layout/AppShell";
+import { AppShell } from "../../components/layout/AppShell";
 import {
   ShieldAlert,
   ShieldCheck,
@@ -17,9 +17,9 @@ import {
   FileText,
   RotateCcw,
 } from "lucide-react";
-import { classifyEmailLocally, checkArtifactsStatus, type ArtifactStatus } from "@/lib/ml/onnx-session";
-import { createClient } from "@/lib/supabase/client";
-import type { LocalClassificationResult, ExplanationSignal } from "@/lib/types";
+import { classifyEmailLocally, checkArtifactsStatus, type ArtifactStatus } from "../../lib/ml/onnx-session";
+import { createClient } from "../../lib/supabase/client";
+import type { LocalClassificationResult, ExplanationSignal } from "../../lib/types";
 
 // Pre-defined real examples clearly labeled for testing
 const EXAMPLE_EMAILS = [

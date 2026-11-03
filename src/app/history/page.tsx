@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { AppShell } from "@/components/layout/AppShell";
+import { AppShell } from "../../components/layout/AppShell";
 import {
   History as HistoryIcon,
   Search,
@@ -18,8 +18,8 @@ import {
   Calendar,
   Lock,
 } from "lucide-react";
-import { createClient } from "@/lib/supabase/client";
-import type { PredictionRecord } from "@/lib/types";
+import { createClient } from "../../lib/supabase/client";
+import type { PredictionRecord } from "../../lib/types";
 
 export default function HistoryPage() {
   const [records, setRecords] = useState<PredictionRecord[]>([]);

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { AppShell } from "@/components/layout/AppShell";
+import { AppShell } from "../../components/layout/AppShell";
 import {
   Cpu,
   Layers,
@@ -14,7 +14,7 @@ import {
   FileCheck,
   TrendingUp,
 } from "lucide-react";
-import type { ModelMetricsData } from "@/lib/types";
+import type { ModelMetricsData } from "../../lib/types";
 
 export default function InsightsPage() {
   const [metrics, setMetrics] = useState<ModelMetricsData | null>(null);

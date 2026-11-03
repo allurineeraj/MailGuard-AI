@@ -10,7 +10,7 @@ import type {
 } from "onnxruntime-web";
 import { textToSequence, MAX_SEQ_LENGTH } from "./tokenizer";
 import { extractExplanationSignals } from "./explain";
-import type { LocalClassificationResult, PreprocessingConfig } from "@/lib/types";
+import type { LocalClassificationResult, PreprocessingConfig } from "../types";
 
 // Cached in-memory instances for fast repeated classifications
 let sessionCache: InferenceSession | null = null;
