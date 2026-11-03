@@ -6,6 +6,7 @@
 # Next.js build
 /.next/
 /out/
+*.tsbuildinfo
 
 # Production builds
 /build
@@ -35,9 +36,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-/lib/
-/lib64/
-!src/lib/
 parts/
 sdist/
 var/
